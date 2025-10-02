@@ -1,10 +1,8 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 const Home = () => {
   return (
-    <div>
+    <div className="min-h-screen w-[95%] mx-auto py-6 overflow-x-hidden">
       THis is form home
     </div>
   );
