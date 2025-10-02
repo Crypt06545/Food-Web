@@ -1,8 +1,18 @@
 import React from "react";
 import { Button } from "./ui/button";
 import { ChefHat, Download } from "lucide-react";
-
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 const Hero = () => {
+  const tl = gsap.timeline();
+  useGSAP(() => {
+    tl.from(".content", {
+      x: -100,
+      opacity: 0,
+      duration: 0.7,
+      delay: 0.25,
+    });
+  }, []);
   return (
     <div
       className="relative bg-cover bg-center h-[80vh] flex items-center rounded-2xl overflow-hidden"
@@ -15,7 +25,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* content */}
-      <div className="relative z-10 w-[90%] md:w-[70%] mx-auto text-center md:text-left text-white space-y-6">
+      <div className="content relative z-10 w-[90%] md:w-[70%] mx-auto text-center md:text-left text-white space-y-6">
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
           Adventure of <span className="text-amber-400">Delicacies</span>
         </h1>
