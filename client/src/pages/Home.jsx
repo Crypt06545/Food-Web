@@ -1,4 +1,5 @@
 import ExploreMenu from "@/components/ExploreMenu";
+import FoodList from "@/components/FoodList";
 import Hero from "@/components/Hero";
 import React, { useState } from "react";
 
@@ -8,6 +9,7 @@ const Home = () => {
     <div className="min-h-screen w-[95%] mx-auto py-6 overflow-x-hidden">
       <Hero />
       <ExploreMenu category={category} setCategory={setCategory} />
+      <FoodList/>
     </div>
   );
 };
