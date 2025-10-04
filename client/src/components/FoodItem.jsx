@@ -13,8 +13,8 @@ import {
 const FoodItem = ({ item }) => {
   return (
     <div className="cursor-pointer ">
-      <Card>
-        <CardContent>
+      <Card className='p-0'>
+        <CardContent className='p-0'>
           <div>
             <img src={item?.image} alt={item?.name} />
           </div>

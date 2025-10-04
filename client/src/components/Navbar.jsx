@@ -1,6 +1,6 @@
 import { Search, ShoppingBag, X, Menu } from "lucide-react";
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Button } from "./ui/button";
 
 const Navbar = () => {
@@ -42,21 +42,23 @@ const Navbar = () => {
 
         {/* Right side (desktop) */}
         <div className="hidden md:flex gap-6 items-center">
+          
           <div className="cursor-pointer hover:text-amber-500 transition-colors">
-            <Search size={20} />
-          </div>
-          <div className="cursor-pointer hover:text-amber-500 transition-colors">
-            <ShoppingBag size={20} />
+            <Link to={"/cart"}>
+              <ShoppingBag size={20} />
+            </Link>
           </div>
           <Button className="bg-amber-500 cursor-pointer hover:bg-amber-600 text-white">
-            Sign In
+            <Link to={"/signin"}>Sign In</Link>
           </Button>
         </div>
 
         {/* Mobile menu button */}
         <div className="md:hidden flex items-center gap-4">
           <div className="cursor-pointer hover:text-amber-500 transition-colors">
-            <ShoppingBag size={20} />
+            <Link to={"/cart"}>
+              <ShoppingBag size={20} />
+            </Link>
           </div>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -87,7 +89,7 @@ const Navbar = () => {
             ))}
             <div className="flex items-center gap-4 mt-4 pt-4 border-t">
               <Button className=" bg-amber-500 hover:bg-amber-600 text-white flex-1">
-                Sign In
+                <Link to={"/signin"}>Sign In</Link>
               </Button>
             </div>
           </div>
